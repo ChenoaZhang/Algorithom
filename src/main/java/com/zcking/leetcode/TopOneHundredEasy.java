@@ -1,9 +1,6 @@
 package com.zcking.leetcode;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Description: Top liked 100 easy
@@ -94,7 +91,7 @@ public class TopOneHundredEasy {
      * @return
      */
 
-    public TopOneHundredEasy.ListNode mergeTwoLists(TopOneHundredEasy.ListNode list1, TopOneHundredEasy.ListNode list2) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if (list1 == null) {
             return list2;
         }
@@ -114,10 +111,10 @@ public class TopOneHundredEasy {
 
     public class ListNode {
         int val;
-        TopOneHundredEasy.ListNode next;
+        ListNode next;
         ListNode() {}
         ListNode(int val) { this.val = val; }
-        ListNode(int val, TopOneHundredEasy.ListNode next) { this.val = val; this.next = next; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
 
@@ -193,4 +190,57 @@ public class TopOneHundredEasy {
         return allWays;
     }
 
+
+    /**
+     * Given the root of a binary tree, return the inorder traversal of its nodes' values.
+     * @param root
+     * @return
+     */
+    public List<Integer> inorderTraversal(TreeNode root) {
+
+        List<Integer> inorderList = new ArrayList<>();
+//
+//        if (root == null) {
+//            return inorderList;
+//        }
+//
+//        help(root, inorderList);
+
+//        Deque<TreeNode> stack = new ArrayDeque<>();
+//        TreeNode curr = root;
+//        while (curr != null || !stack.isEmpty()) {
+//            while (curr != null) {
+//                stack.push(curr);
+//                curr = curr.left;
+//            }
+//            curr = stack.pop();
+//            inorderList.add(curr.val);
+//            curr = curr.right;
+//
+//        }
+
+
+        return inorderList;
+    }
+
+//    public void help(TreeNode root, List<Integer> list) {
+//        if (root != null) {
+//            help(root.left, list);
+//            list.add(root.val);
+//            help(root.right, list);
+//        }
+//    }
+    
+    public class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode() {}
+      TreeNode(int val) { this.val = val; }
+      TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
+    }
 }
